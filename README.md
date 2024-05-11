@@ -1,9 +1,5 @@
 # Food Ordering Portal
 
-<p align="center">
-<img src="images/preview_1.png">
-</p>
-
 The Food Ordering Portal is a web application built using the MERN stack that allows:
 
 <b>Customers</b>
@@ -36,23 +32,6 @@ The Food Ordering Portal supports two types of accounts: vendors and customers.
 * MongoDB
 * React.js
 
-## Setup (Using Docker)
-
-1. From the cloned directory, run `cd backend` and run the following command:
-```bash
-cp .env.template .env
-```
-
-2. Fill in the details in the newly created `.env` file, and save it. This is an essential step, as it contains the credentials for the database.
-
-3. Now, all you need to do is run the following command from the root of the cloned directory:
-```bash
-docker-compose up -d
-```
-The application will now be running on http://localhost:80.
-
-Running
-```bash
 docker-compose down
 ```
 will stop the application.
