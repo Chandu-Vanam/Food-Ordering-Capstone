@@ -31,7 +31,3 @@ The Food Ordering Portal supports two types of accounts: vendors and customers.
 * Express.js
 * MongoDB
 * React.js
-
-docker-compose down
-```
-will stop the application.
