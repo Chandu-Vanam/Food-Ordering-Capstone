@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 // Loading enviroment variables
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 const uri = process.env.MONGO_URI;
 
 // Set up middleware
