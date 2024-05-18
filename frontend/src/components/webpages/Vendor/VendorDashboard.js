@@ -52,23 +52,22 @@ const VendorDashboard = () => {
   return (
     <div>
       {matches ?
-        <Typography className="dashboard-heading" variant="h3" component="h1">
+        <Typography style={{fontSize:'2rem'}} className="dashboard-heading" variant="h3" component="h1">
           My Items
         </Typography>
         :
-        <Typography className="dashboard-heading" variant="h4" component="h1">
+        <Typography style={{fontSize:'2rem'}} className="dashboard-heading" variant="h4" component="h1" >
           My Items
         </Typography>
       }
-
       <Grid
         className="item-grid"
         container
         columns={13}
-        spacing={2}
+        spacing={10}
         justifyContent="center"
         wrap="wrap"
-        rowSpacing={4}
+        rowSpacing={1}
       >
         {items.length > 0 ?
           items.map((item) => {

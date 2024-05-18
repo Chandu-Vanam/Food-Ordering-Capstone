@@ -8,7 +8,7 @@ require('dotenv').config();
 const app = express();
 
 // Loading enviroment variables
-const port = process.env.PORT || 5000;
+const port = process.env.PORT;
 const uri = process.env.MONGO_URI;
 
 // Set up middleware
@@ -20,13 +20,13 @@ app.use(express.urlencoded({ extended: true }))
 app.use('/public/images', express.static(__dirname + '/public/images/'));
 
 // Setup API endpoints
-app.use("/buyers", require("./routes/buyer.route"));
-app.use("/vendors", require("./routes/vendor.route"));
-app.use("/items", require("./routes/item.route"));
-app.use("/orders", require("./routes/order.route"));
+app.use("/api/buyers", require("./routes/buyer.route"));
+app.use("/api/vendors", require("./routes/vendor.route"));
+app.use("/api/items", require("./routes/item.route"));
+app.use("/api/orders", require("./routes/order.route"));
 
 // Connection to MongoDB
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, err => {
+mongoose.connect("mongodb+srv://foodordering:foodorderingonline@cluster0.8zq5oit.mongodb.net/Food-Ordering-Online", { useNewUrlParser: true, useUnifiedTopology: true }, err => {
     if (err) {
         console.log(err);
     } else {

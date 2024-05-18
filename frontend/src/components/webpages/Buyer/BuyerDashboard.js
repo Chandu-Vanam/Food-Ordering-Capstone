@@ -28,7 +28,7 @@ const BuyerDashboard = () => {
         vegetarian: 'Both',
         tags: [],
         start_price: 0,
-        end_price: 200,
+        end_price: 1000,
     });
     const [sort, setSort] = useState({
         order: '',
@@ -49,38 +49,50 @@ const BuyerDashboard = () => {
         return tags;
     }
 
-    // Check if item passes filter
     const passesFilter = item => {
+        // console.log("Item:", item);
+    
         // Search filter
-        if (!(filter.search === '' || fuzzy.test(filter.search.toLowerCase(), item.name.toLowerCase())))
+        if (filter.search !== '' && !fuzzy.test(filter.search.toLowerCase(), item.name.toLowerCase())) {
+            // console.log("Search filter failed");
             return false;
-
+        }
+    
         // Vegetarian filter
-        if (!(filter.vegetarian === 'Both' || item.category === filter.vegetarian))
+        if (filter.vegetarian !== 'Both' && item.category !== filter.vegetarian) {
+            // console.log("Vegetarian filter failed");
             return false;
-
+        }
+    
         // Vendor filter
         if (filter.vendor.length > 0) {
             const vendor = entities.vendors.find(vendor => vendor._id === item.vendor_id);
-            if (!filter.vendor.includes(vendor.shop_name))
+            if (!filter.vendor.includes(vendor.shop_name)) {
+                // console.log("Vendor filter failed");
                 return false;
+            }
         }
-
-        // Price filter
-        if (item.price < filter.start_price || item.price > filter.end_price)
-            return false;
-
+    
         // Tags filter
         if (filter.tags.length > 0) {
             for (let tag of filter.tags) {
-                if (!item.tags.includes(tag))
+                if (!item.tags.includes(tag)) {
+                    // console.log("Tags filter failed");
                     return false;
+                }
             }
         }
-
+    
+        // Price filter
+        if (item.price < filter.start_price || item.price > filter.end_price) {
+            // console.log("Price filter failed");
+            return false;
+        }
+    
+        // console.log("All filters passed");
         return true;
     }
-
+    
     // Verify if vendor has not closed
     const ifOpen = vendor => {
         let openingTime = vendor.opening_time.split(":");
@@ -167,11 +179,11 @@ const BuyerDashboard = () => {
             <Wallet />
 
             {matches ?
-                <Typography className="dashboard-heading" variant="h3" component="h1">
+                <Typography style={{fontSize: '2rem'}} className="dashboard-heading" variant="h3" component="h1">
                     What's On The Menu
                 </Typography>
                 :
-                <Typography className="dashboard-heading" variant="h4" component="h1">
+                <Typography style={{fontSize: '2rem'}} className="dashboard-heading" variant="h4" component="h1">
                     What's On The Menu
                 </Typography>
             }
@@ -212,6 +224,7 @@ const BuyerDashboard = () => {
 
             <Grid
                 className="item-grid"
+                style={{marginTop: '20px'}}
                 container
                 columns={13}
                 spacing={2}
@@ -221,6 +234,7 @@ const BuyerDashboard = () => {
             >
                 {entities.items.length > 0 ?
                     sortItems(entities.items).map((item) => {
+                        console.log(passesFilter(item))
                         if (passesFilter(item)) {
                             return (
                                 <Grid key={item._id} item xs={10} sm={6} md={4} lg={3}>

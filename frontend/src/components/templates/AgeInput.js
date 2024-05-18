@@ -14,7 +14,7 @@ const AgeInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) 
         setError(validator.isEmpty(event.target.value) || !validator.isNumeric(event.target.value) || event.target.value < 0);
         setErrorValue({ ...errorDetails, age: validator.isEmpty(event.target.value) || !validator.isNumeric(event.target.value) || event.target.value < 0 });
     }
-
+    const inputStyle = { width: '500px', left: "100%"}; 
     return (
         <div>
             {error ?
@@ -24,6 +24,7 @@ const AgeInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) 
                     helperText='Please enter a valid age'
                     label="Age"
                     variant="outlined"
+                    style={inputStyle}
                     value={age}
                     type={'number'}
                     onChange={handleNumberChange}
@@ -33,6 +34,7 @@ const AgeInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) 
                     id="outlined-basic"
                     label="Age"
                     variant="outlined"
+                    style={inputStyle}
                     value={age}
                     type={'number'}
                     onChange={handleNumberChange}

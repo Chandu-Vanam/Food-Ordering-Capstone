@@ -92,11 +92,11 @@ const ItemAdd = ({ onAdd }) => {
         }
 
         // Checking price limit
-        if (itemDetails.price > 200) {
+        if (itemDetails.price > 1000) {
             handleDialogClose();
             Swal.fire({
                 title: 'Error',
-                text: 'Price cannot be more than 200!',
+                text: 'Price cannot be more than 1000!',
                 icon: 'error',
                 confirmButtonText: 'OK'
             });

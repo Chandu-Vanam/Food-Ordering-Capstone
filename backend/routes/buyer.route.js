@@ -49,7 +49,6 @@ router.post("/register", async (req, res) => {
             email: req.body.email,
             number: req.body.number,
             age: req.body.age,
-            batch: req.body.batch,
         });
 
         // Hash the password
@@ -128,7 +127,7 @@ router.post("/login", async (req, res) => {
                     email: buyer.email,
                     number: buyer.number,
                     age: buyer.age,
-                    batch: buyer.batch,
+                
                 }
             });
         });
@@ -157,7 +156,7 @@ router.patch("/edit", auth, async (req, res) => {
         buyer.name = req.body.name;
         buyer.number = req.body.number;
         buyer.age = req.body.age;
-        buyer.batch = req.body.batch;
+   
 
         // Hash the password
         if (req.body.password !== "") {

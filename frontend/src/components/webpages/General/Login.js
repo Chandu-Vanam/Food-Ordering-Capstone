@@ -3,8 +3,8 @@ import { useState } from 'react';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Swal from 'sweetalert2';
 
-import EmailInput from '../../templates/EmailInput';
-import PasswordInput from '../../templates/PasswordInput';
+import EmailInput1 from '../../templates/EmailInput1';
+import PasswordInput1 from '../../templates/PasswordInput1';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
@@ -99,7 +99,7 @@ const Login = () => {
                 }
             });
     }
-
+    const inputStyle = { width: '500px', left: "10%"}; 
     return (
         <div className="login-form">
             {matches ?
@@ -118,6 +118,7 @@ const Login = () => {
                         label="User Type"
                         variant="outlined"
                         value={userType}
+                        style={inputStyle}
                         onChange={handleUserTypeChange}
                     >
                         <MenuItem value="buyer">Buyer</MenuItem>
@@ -125,19 +126,21 @@ const Login = () => {
                     </TextField>
                 </Grid>
                 <Grid item xs={12}>
-                    <EmailInput
+                    <EmailInput1
                         userDetails={userDetails}
                         setObjectValue={setUserDetails}
                         errorDetails={error}
+                        style={{ width: '500px', left: "10%"}}
                         setErrorValue={setError}
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <PasswordInput
+                    <PasswordInput1
                         className="login-password-input"
                         userDetails={userDetails}
                         setObjectValue={setUserDetails}
                         errorDetails={error}
+                        // style={{ width: '500px', left: "10%"}} 
                         setErrorValue={setError}
                     />
                 </Grid>
@@ -145,6 +148,7 @@ const Login = () => {
                     className="submit-button"
                     variant="contained"
                     color="primary"
+                    // style={inputStyle}
                     onClick={handleFormSubmit}
                 >
                     Login

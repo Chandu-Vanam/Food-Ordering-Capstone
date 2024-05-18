@@ -142,12 +142,9 @@ const ItemCard = ({ item, vendor, computeRating, onEdit, onDelete }) => {
                 image={'public/images/' + item.image}
                 alt="food"
             /> */}
-            <CardMedia
-                component="img"
-                height="250"
-                image={imageUrl}
-                alt="food"
-            />
+            <CardMedia className="cardMedia">
+                <img src={imageUrl} alt="food" className="mediaImage" />
+            </CardMedia>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2" style={{ marginTop: "0.5rem" }}>
                     {item.name}

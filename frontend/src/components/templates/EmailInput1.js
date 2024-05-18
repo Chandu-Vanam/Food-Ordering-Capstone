@@ -3,7 +3,7 @@ import TextField from '@mui/material/TextField';
 import validator from 'validator';
 
 
-const EmailInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) => {
+const EmailInput1 = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) => {
     const [email, setEmail] = useState('');
     const [error, setError] = useState(false);
 
@@ -14,7 +14,7 @@ const EmailInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }
         setError(!validator.isEmail(event.target.value));
         setErrorValue({ ...errorDetails, email: !validator.isEmail(event.target.value) });
     }
-    const inputStyle = { width: '500px', left: "100%"}; 
+    const inputStyle = { width: '500px', left: "10%"}; 
     return (
         <div>
             {error ?
@@ -42,4 +42,4 @@ const EmailInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }
     );
 };
 
-export default EmailInput;
+export default EmailInput1;

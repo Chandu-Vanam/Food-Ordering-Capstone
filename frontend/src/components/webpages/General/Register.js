@@ -22,7 +22,6 @@ const Register = () => {
         email: '',
         number: '',
         age: '',
-        batch: 'UG1',
         shop_name: '',
         manager_name: '',
         opening_time: "12:00",
@@ -86,7 +85,6 @@ const Register = () => {
                 email: userDetails.email,
                 number: userDetails.number,
                 age: userDetails.age,
-                batch: userDetails.batch,
                 password: userDetails.password,
             };
 
@@ -149,7 +147,7 @@ const Register = () => {
                 });
         }
     }
-
+    const inputStyle = { width: '500px', left: "100%"}; 
     return (
         <div className="registration-form">
             {matches ?
@@ -161,10 +159,11 @@ const Register = () => {
                     Register
                 </Typography>
             }
-            <Grid container direction="column" spacing={4} alignItems="center">
+            <Grid container direction="column" spacing={2} alignItems="flex-start">
                 <Grid item>
                     <TextField
                         select
+                        style={inputStyle}
                         label="User Type"
                         variant="outlined"
                         value={userType}
@@ -179,6 +178,7 @@ const Register = () => {
                         <Grid item xs={12}>
                             <TextField
                                 id="outlined-basic"
+                                style={inputStyle}
                                 label="Name"
                                 variant="outlined"
                                 value={userDetails.name}
@@ -188,6 +188,7 @@ const Register = () => {
                         <Grid item xs={12}>
                             <EmailInput
                                 userDetails={userDetails}
+                               
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
                                 setErrorValue={setError}
@@ -196,8 +197,10 @@ const Register = () => {
                         <Grid item xs={12}>
                             <PasswordInput
                                 className="registration-password-input"
+                                
                                 userDetails={userDetails}
                                 setObjectValue={setUserDetails}
+                                style={inputStyle}
                                 errorDetails={error}
                                 setErrorValue={setError}
                             />
@@ -206,6 +209,7 @@ const Register = () => {
                             <AgeInput
                                 label="Age"
                                 userDetails={userDetails}
+                                style={inputStyle}
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
                                 setErrorValue={setError}
@@ -213,30 +217,18 @@ const Register = () => {
                         </Grid>
                         <Grid item xs={12}>
                             <PhoneInput
+                            style={{left:'200%'}}   
                                 country={'in'}
                                 value={userDetails.number}
                                 placeholder="Phone Number"
                                 onChange={value => setUserDetails({ ...userDetails, number: value })}
                             />
                         </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                select
-                                label="Batch"
-                                variant="outlined"
-                                value={userDetails.batch}
-                                onChange={event => setUserDetails({ ...userDetails, batch: event.target.value })}
-                            >
-                                <MenuItem value="UG1">UG1</MenuItem>
-                                <MenuItem value="UG2">UG2</MenuItem>
-                                <MenuItem value="UG3">UG3</MenuItem>
-                                <MenuItem value="UG4">UG4</MenuItem>
-                                <MenuItem value="UG5">UG5</MenuItem>
-                            </TextField>
-                        </Grid>
+
                         <Button
                             className="submit-button"
                             variant="contained"
+                            style={{left:'45%'}}
                             color="primary"
                             onClick={handleFormSubmit}
                         >
@@ -250,6 +242,7 @@ const Register = () => {
                                 id="outlined-basic"
                                 label="Shop name"
                                 variant="outlined"
+                                style={inputStyle}
                                 value={userDetails.shop_name}
                                 onChange={event => setUserDetails({ ...userDetails, shop_name: event.target.value })}
                             />
@@ -258,6 +251,7 @@ const Register = () => {
                             <TextField
                                 id="outlined-basic"
                                 label="Manager name"
+                                style={inputStyle}
                                 variant="outlined"
                                 value={userDetails.manager_name}
                                 onChange={event => setUserDetails({ ...userDetails, manager_name: event.target.value })}
@@ -269,6 +263,7 @@ const Register = () => {
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
                                 setErrorValue={setError}
+                                style={inputStyle}
                             />
                         </Grid>
                         <Grid item xs={12}>
@@ -278,12 +273,14 @@ const Register = () => {
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
                                 setErrorValue={setError}
+                                style={inputStyle}
                             />
                         </Grid>
                         <Grid item xs={12}>
                             <PhoneInput
                                 country={'in'}
                                 value={userDetails.number}
+                                style={inputStyle}
                                 placeholder="Phone Number"
                                 onChange={value => setUserDetails({ ...userDetails, number: value })}
                             />
@@ -292,6 +289,7 @@ const Register = () => {
                             <TimeInput
                                 label="Opening time"
                                 userDetails={userDetails}
+                                style={inputStyle}
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
                                 setErrorValue={setError}
@@ -300,6 +298,7 @@ const Register = () => {
                         <Grid item xs={12}>
                             <TimeInput
                                 label="Closing time"
+                                style={inputStyle}
                                 userDetails={userDetails}
                                 setObjectValue={setUserDetails}
                                 errorDetails={error}
@@ -310,6 +309,7 @@ const Register = () => {
                             className="submit-button"
                             variant="contained"
                             color="primary"
+                            style={{left:'10%'}}
                             onClick={handleFormSubmit}
                         >
                             Register

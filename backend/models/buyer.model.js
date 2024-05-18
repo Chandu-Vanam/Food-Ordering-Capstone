@@ -23,10 +23,6 @@ const BuyerSchema = new mongoose.Schema({
 		type: Number,
 		required: true
 	},
-	batch: {
-		type: String,
-		required: true
-	},
 	wallet: {
 		type: Number,
 		default: 0

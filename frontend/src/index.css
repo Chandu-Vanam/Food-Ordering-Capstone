@@ -27,8 +27,16 @@ code {
 }
 
 .registration-heading {
-  margin-top: 12rem !important;
+  margin-top: 6rem !important;
   margin-bottom: 3rem !important;
+  font-size: 2.5rem !important;
+}
+
+.vendor-profile-grid{
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .react-tel-input {
@@ -45,16 +53,16 @@ code {
 .submit-button {
   margin-top: 2rem !important;
   margin-left: 2rem !important;
-  margin-bottom: 2rem !important;
+  /* margin-bottom: 2rem !important; */
 }
 
-.item-grid {
+/* .item-grid {
   margin-top: 5rem !important;
   margin-bottom: 5rem !important;
-}
+} */
 
 .dashboard-heading {
-  margin-top: 12rem !important;
+  margin-top: 6rem !important;
   margin-bottom: 2rem !important;
 }
 
@@ -68,14 +76,21 @@ code {
   margin-top: 2rem !important;
 }
 
+.cardMedia {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mediaImage {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
 @media only screen and (max-width: 600px) {
   .welcome-page {
     height: 80vh;
-  }
-
-  .registration-heading {
-    margin-top: 12rem !important;
-    margin-bottom: 2rem !important;
   }
 
   .react-tel-input input {

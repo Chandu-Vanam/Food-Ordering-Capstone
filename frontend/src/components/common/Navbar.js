@@ -17,6 +17,7 @@ import AppRegistrationIcon from '@mui/icons-material/AppRegistration';
 import FastfoodIcon from '@mui/icons-material/Fastfood';
 import Swal from 'sweetalert2';
 import axios from 'axios';
+import './navbar.css';
 
 import { user_is_authenticated, user_logout, user_type } from '../../lib/auth';
 
@@ -64,22 +65,22 @@ const Navbar = () => {
                         {matches ? 'Online Food Ordering ' : ""}
                     </Typography>
                     {user_is_authenticated() ?
-                        <div>
-                            <Button color="inherit" href="/"><HomeIcon style={{ marginRight: "0.5rem" }} />Home</Button>
-                            <Button color="inherit" href="/orders"><ShoppingCartIcon style={{ marginRight: "0.5rem" }} />Orders</Button>
+                        <div >
+                            <Button className='nav-right' color="inherit" href="/"><HomeIcon style={{ marginRight: "0.5rem" }} />Home</Button>
+                            <Button className='nav-right' color="inherit" href="/orders"><ShoppingCartIcon style={{ marginRight: "0.5rem" }} />Orders</Button>
                             {user_type() === 'vendor' &&
-                                <Button color="inherit" href="/statistics"><EqualizerIcon style={{ marginRight: "0.5rem" }} />Statistics</Button>
+                                <Button className='nav-right' color="inherit" href="/statistics"><EqualizerIcon style={{ marginRight: "0.5rem" }} />Statistics</Button>
                             }
-                            <Button color="inherit" href="/profile"><PersonIcon style={{ marginRight: "0.5rem" }} />Profile</Button>
+                            <Button className='nav-right' color="inherit" href="/profile"><PersonIcon style={{ marginRight: "0.5rem" }} />Profile</Button>
                             {user_type() === 'buyer' &&
-                                <Button color="inherit"><AccountBalanceWalletIcon style={{ marginRight: "0.5rem" }} />Wallet: Rs. {wallet}</Button>
+                                <Button className='nav-right' color="inherit"><AccountBalanceWalletIcon style={{ marginRight: "0.5rem" }} />Wallet: Rs. {wallet}</Button>
                             }
-                            <Button color="inherit" onClick={handleLogout}><ExitToAppIcon style={{ marginRight: "0.5rem" }} />Logout</Button>
+                            <Button className='nav-right' color="inherit" onClick={handleLogout}><ExitToAppIcon style={{ marginRight: "0.5rem" }} />Logout</Button>
                         </div>
                         :
                         <div>
-                            <Button color="inherit" href="/login"><LoginIcon style={{ marginRight: "0.5rem" }} />Login</Button>
-                            <Button color="inherit" href="/register"><AppRegistrationIcon style={{ marginRight: "0.5rem" }} />Register</Button>
+                            <Button className='nav-right' color="inherit" href="/login"><LoginIcon style={{ marginRight: "0.5rem" }} />Login</Button>
+                            <Button className='nav-right' color="inherit" href="/register"><AppRegistrationIcon style={{ marginRight: "0.5rem" }} />Register</Button>
                         </div>
                     }
                 </Toolbar>

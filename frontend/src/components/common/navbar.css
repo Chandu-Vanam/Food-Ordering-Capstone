@@ -1,0 +1,11 @@
+.nav-right{
+    text-transform: capitalize;
+    margin-right: 30px;
+    font-family: sans-serif;
+    padding: 0;
+    font-size: 1rem;
+}
+.nav-right:hover{
+    text-decoration: underline;
+    font-weight: bolder;
+}

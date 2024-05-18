@@ -195,7 +195,7 @@ const VendorProfile = () => {
 
     return (
         <div id="profile-page">
-            <Grid container direction="column" spacing={4} alignItems="center">
+            <Grid container direction="column" spacing={2} alignItems="center">
                 <Grid item xs={12}>
                     {matches ?
                         <Typography className="registration-heading" variant="h3" component="h1">
@@ -207,8 +207,8 @@ const VendorProfile = () => {
                         </Typography>
                     }
                 </Grid>
-                <Grid item xs={12}>
-                    <TableContainer component={Paper} style={{ marginTop: '1.5rem' }}>
+                <Grid item xs={12} className='vendor-profile-grid'>
+                    <TableContainer component={Paper} style={{ margin: '1.5rem' }}>
                         <Table aria-label="simple table">
                             <TableBody>
                                 <TableRow

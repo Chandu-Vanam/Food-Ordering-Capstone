@@ -7,7 +7,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import validator from 'validator';
 
 
-const PasswordInput = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) => {
+const PasswordInput1 = ({ userDetails, setObjectValue, errorDetails, setErrorValue }) => {
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState(false);
@@ -24,7 +24,7 @@ const PasswordInput = ({ userDetails, setObjectValue, errorDetails, setErrorValu
     const handleShowPasswordChange = () => {
         setShowPassword(!showPassword);
     }
-    const inputStyle = { width: '500px', left: "100%"}; 
+    const inputStyle = { width: '500px', left: "10%"};  
 
     return (
         <div>
@@ -77,4 +77,4 @@ const PasswordInput = ({ userDetails, setObjectValue, errorDetails, setErrorValu
     );
 };
 
-export default PasswordInput;
+export default PasswordInput1;

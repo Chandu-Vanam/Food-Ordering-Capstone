@@ -178,7 +178,7 @@ const VendorStatistics = () => {
                         <Typography variant="h5" component="h1">
                             ORDER STATISTICS
                         </Typography>
-                        <TableContainer component={Paper} style={{ marginTop: '1.5rem' }}>
+                        <TableContainer component={Paper} style={{ marginTop: '1rem' }}>
                             <Table aria-label="simple table">
                                 <TableBody>
                                     <TableRow
@@ -245,7 +245,7 @@ const VendorStatistics = () => {
                             </Table>
                         </TableContainer>
                     </Grid>
-                    <Grid item xs={12}>
+                    {/* <Grid item xs={12}>
                         <Card className="batch-statistics">
                             <CardContent>
                                 <Typography variant="h5" component="h1">
@@ -304,7 +304,7 @@ const VendorStatistics = () => {
                                 </Grid>
                             </CardContent>
                         </Card>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </div>
             :
