@@ -100,7 +100,7 @@ const ItemFilter = ({ entities, filter, setFilter }) => {
                                     step={1}
                                     marks
                                     min={0}
-                                    max={200}
+                                    max={2000}
                                     onChange={(e, newValue) => setFilter({ ...filter, start_price: newValue[0], end_price: newValue[1] })}
                                 />
                             </FormControl>

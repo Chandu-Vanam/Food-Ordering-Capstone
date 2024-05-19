@@ -26,7 +26,7 @@ const TimeInput = ({ label, userDetails, setObjectValue, errorDetails, setErrorV
         else if (label === 'Closing time')
             setErrorValue({ ...errorDetails, closing_time: !re.test(event.target.value) });
     }
-
+    const inputStyle = { width: '500px', left: "100%"}; 
     return (
         <div>
             {error ?
@@ -38,6 +38,7 @@ const TimeInput = ({ label, userDetails, setObjectValue, errorDetails, setErrorV
                     helperText='Please enter a valid time'
                     value={time}
                     placeholder="hh:mm"
+                    style={inputStyle}
                     onChange={handleTimeChange}
                 />
                 :
